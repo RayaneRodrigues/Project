@@ -17,6 +17,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    private void limpar(){
+        txtUsuario.setText(null);
+        pwdSenha.setText(null);
+        txtUsuario.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,12 +33,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pwdSenha = new javax.swing.JPasswordField();
+        lbTitulo = new javax.swing.JLabel();
+        btnLimpar = new javax.swing.JButton();
+        txtUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,16 +58,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(40, 120, 80, 20);
 
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(6, 20));
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(120, 150, 130, 30);
+        pwdSenha.setPreferredSize(new java.awt.Dimension(6, 20));
+        getContentPane().add(pwdSenha);
+        pwdSenha.setBounds(120, 150, 160, 30);
 
-        jLabel2.setFont(new java.awt.Font("Freestyle Script", 1, 36)); // NOI18N
-        jLabel2.setText("Ray's Fashion");
+        lbTitulo.setFont(new java.awt.Font("Freestyle Script", 1, 36)); // NOI18N
+        lbTitulo.setText("Ray's Fashion");
+        getContentPane().add(lbTitulo);
+        lbTitulo.setBounds(110, 40, 160, 40);
+
+        btnLimpar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpar);
+        btnLimpar.setBounds(120, 190, 73, 30);
+        getContentPane().add(txtUsuario);
+        txtUsuario.setBounds(120, 110, 160, 30);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lost-database.png"))); // NOI18N
+        jLabel2.setText("FALHA AO CONECTAR AO BANCO DE DADOS");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 40, 160, 40);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(120, 110, 130, 30);
+        jLabel2.setBounds(130, 310, 430, 60);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(102, 102, 255), new java.awt.Color(153, 153, 255)));
@@ -88,10 +112,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(1370, 32, 207, 69);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Login");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(180, 190, 73, 23);
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnLogin.setText("Login");
+        getContentPane().add(btnLogin);
+        btnLogin.setBounds(210, 190, 73, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1bc1f4b675ef8e9eba403e299c066492.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -100,6 +124,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(712, 439));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        //Limpar
+        limpar();
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,14 +166,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lbTitulo;
+    private javax.swing.JPasswordField pwdSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
